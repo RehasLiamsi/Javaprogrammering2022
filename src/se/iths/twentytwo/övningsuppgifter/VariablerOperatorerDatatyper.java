@@ -8,7 +8,7 @@ public class VariablerOperatorerDatatyper {
 
     public static void main(String[] args) {
         VariablerOperatorerDatatyper v = new VariablerOperatorerDatatyper();
-        v.quesThree();
+        v.quesFour();
     }
 
     public void quesTwo() {
@@ -26,5 +26,14 @@ public class VariablerOperatorerDatatyper {
         //ANOTHER SOLUTION
         //int age = sc.nextInt();
         System.out.println("Hej " + name + " som är " + age + " år gammal!");
+    }
+
+    public void quesFour() {
+        System.out.print("Skriv ett tal: ");
+        int digitOne = sc.nextInt();
+        System.out.print("Skriv ett tal till: ");
+        int digitTwo = sc.nextInt();
+        int sum = digitOne + digitTwo;
+        System.out.println("Summan är " + sum);
     }
 }
