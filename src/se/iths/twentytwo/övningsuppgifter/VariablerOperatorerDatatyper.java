@@ -8,7 +8,7 @@ public class VariablerOperatorerDatatyper {
 
     public static void main(String[] args) {
         VariablerOperatorerDatatyper v = new VariablerOperatorerDatatyper();
-        v.quesFour();
+        v.quesFive();
     }
 
     public void quesTwo() {
@@ -34,6 +34,18 @@ public class VariablerOperatorerDatatyper {
         System.out.print("Skriv ett tal till: ");
         int digitTwo = sc.nextInt();
         int sum = digitOne + digitTwo;
+        int product = digitOne * digitTwo;
         System.out.println("Summan är " + sum);
+        System.out.println(("Produkten är " + product));
+    }
+
+    public void quesFive() {
+        System.out.print("Skriv ett decimaltal: ");
+        String input = sc.nextLine();
+        double number = Double.parseDouble(input);
+        int roundedNumber = (int) number;
+        //ANOTHER SOLUTION
+        //int roundedNumber = (int) Math.round(number);
+        System.out.println("Talet är nu " + roundedNumber);
     }
 }
