@@ -8,7 +8,7 @@ public class VariablerOperatorerDatatyper {
 
     public static void main(String[] args) {
         VariablerOperatorerDatatyper v = new VariablerOperatorerDatatyper();
-        v.quesFive();
+        v.quesSeven();
     }
 
     public void quesTwo() {
@@ -47,5 +47,25 @@ public class VariablerOperatorerDatatyper {
         //ANOTHER SOLUTION
         //int roundedNumber = (int) Math.round(number);
         System.out.println("Talet är nu " + roundedNumber);
+    }
+
+    public void quesSix() {
+        System.out.print("Skriv ett tal: ");
+        int digitOne = sc.nextInt();
+        System.out.print("Skriv ett tal till: ");
+        int digitTwo = sc.nextInt();
+        int average = (digitTwo + digitOne) / 2;
+        System.out.println("Medelvärdet är " + average);
+    }
+
+    public void quesSeven() {
+        System.out.print("Skriv hur mycket pengar du har på bankkontot: ");
+        String input = sc.next();
+        double balance = Double.parseDouble(input);
+        System.out.print("Skriv räntesatsen i procent: ");
+        double interestInput = sc.nextDouble();
+        double interest = interestInput / 100;
+        double amount = balance + (balance * interest);
+        System.out.println("Saldot på kontot är " + amount);
     }
 }
