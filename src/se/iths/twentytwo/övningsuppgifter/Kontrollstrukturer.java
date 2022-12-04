@@ -1,6 +1,7 @@
 package se.iths.twentytwo.övningsuppgifter;
 
 import java.io.Console;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Kontrollstrukturer {
@@ -65,19 +66,29 @@ public class Kontrollstrukturer {
     }
 
     public void quesSix() {
-        int secretNumber = 37;
+        /*//ONE WAY TO GENERATE RANDOM NUMBER
+        Random randomNumber = new Random();
+        int secretNumber = randomNumber.nextInt(100);*/
+
+        double randomNumber = Math.random();
+        int secretNumber = (int) (randomNumber * 100 + 1);
+        int guesses = 0;
         System.out.println("Skriv ett tal");
         while (true) {
             int guess = sc.nextInt();
+            ++guesses;
             if (guess < secretNumber)
                 System.out.println("Gissa på ett högre tal");
             else if (guess > secretNumber) {
                 System.out.println("Gissa på ett lägre tal");
             } else {
-                System.out.println("Grattis! Du gissade rätt");
+                System.out.println("Grattis! Du gissade rätt i " + guesses + " gissningar");
                 break;
             }
         }
+    }
+
+    public void quesSeven() {
 
     }
 }
