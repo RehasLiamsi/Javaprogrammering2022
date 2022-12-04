@@ -8,7 +8,7 @@ public class Kontrollstrukturer {
 
     public static void main(String[] args) {
         Kontrollstrukturer v = new Kontrollstrukturer();
-        v.quesFive();
+        v.quesSix();
     }
 
     public void quesThree() {
@@ -62,5 +62,22 @@ public class Kontrollstrukturer {
             case "november" -> System.out.println("11");
             case "december" -> System.out.println("12");
         }
+    }
+
+    public void quesSix() {
+        int secretNumber = 37;
+        System.out.println("Skriv ett tal");
+        while (true) {
+            int guess = sc.nextInt();
+            if (guess < secretNumber)
+                System.out.println("Gissa på ett högre tal");
+            else if (guess > secretNumber) {
+                System.out.println("Gissa på ett lägre tal");
+            } else {
+                System.out.println("Grattis! Du gissade rätt");
+                break;
+            }
+        }
+
     }
 }
