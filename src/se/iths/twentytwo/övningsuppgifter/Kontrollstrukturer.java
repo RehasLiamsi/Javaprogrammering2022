@@ -8,7 +8,7 @@ public class Kontrollstrukturer {
 
     public static void main(String[] args) {
         Kontrollstrukturer v = new Kontrollstrukturer();
-        v.quesThree();
+        v.quesFour();
     }
 
     public void quesThree() {
@@ -31,5 +31,16 @@ public class Kontrollstrukturer {
         } else {
             System.out.println("Fel lösenord!");
         }*/
+    }
+
+    public void quesFour() {
+        System.out.print("Skriv ett tal: ");
+        int number = sc.nextInt();
+        if(number < 100)
+            System.out.println("Talet är mindre än 100");
+        else if (number > 100)
+            System.out.println("Talet är större än 100");
+        else
+            System.out.println("Talet är lika med 100");
     }
 }
