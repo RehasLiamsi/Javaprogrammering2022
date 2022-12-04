@@ -9,7 +9,7 @@ public class Kontrollstrukturer {
 
     public static void main(String[] args) {
         Kontrollstrukturer v = new Kontrollstrukturer();
-        v.quesNine();
+        v.quesTen();
     }
 
     public void quesThree() {
@@ -106,6 +106,18 @@ public class Kontrollstrukturer {
         for (int i = 65536; i > 1 ; i >>= 1) {
             System.out.println(i);
             //DIVIDING i BY 2. i >>=1 IS SAME AS WRITING i = i/2
+        }
+    }
+
+    public void quesTen() {
+        String printWord = "";
+        while(true) {
+            String word = sc.nextLine();
+            if (word.equals(".") || word.isEmpty())
+                break;
+
+            printWord = printWord + word + " ";
+            System.out.println(printWord);
         }
     }
 }
