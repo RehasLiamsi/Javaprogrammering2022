@@ -9,7 +9,7 @@ public class Kontrollstrukturer {
 
     public static void main(String[] args) {
         Kontrollstrukturer v = new Kontrollstrukturer();
-        v.quesTen();
+        v.quesEleven();
     }
 
     public void quesThree() {
@@ -118,6 +118,23 @@ public class Kontrollstrukturer {
 
             printWord = printWord + word + " ";
             System.out.println(printWord);
+        }
+    }
+
+    public void quesEleven() {
+        System.out.println("Skriv ett tal");
+        int input = sc.nextInt();
+        while (input > 2) {
+            input = input % 2 == 0 ? input/2 : (input * 2) + 1;
+
+            /* //SIMPLIFICATION OF WHAT THE ABOVE STATEMENT DOES
+            if(input % 2 == 0) {
+                input = input / 2;
+            }
+            else {
+                input = (input * 2) + 1;
+            }*/
+            System.out.println(input);
         }
     }
 }
