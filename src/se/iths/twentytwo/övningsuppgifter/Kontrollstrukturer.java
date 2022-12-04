@@ -9,7 +9,7 @@ public class Kontrollstrukturer {
 
     public static void main(String[] args) {
         Kontrollstrukturer v = new Kontrollstrukturer();
-        v.quesSeven();
+        v.quesEight();
     }
 
     public void quesThree() {
@@ -91,6 +91,13 @@ public class Kontrollstrukturer {
     public void quesSeven() {
         for (int i = 1; i < 17 ; i++) {
             System.out.println(i);
+        }
+    }
+
+    public void quesEight() {
+        for (int i = 21; i > 0; i--) {
+            if(i % 2 == 0)
+                System.out.println(i);
         }
     }
 }
