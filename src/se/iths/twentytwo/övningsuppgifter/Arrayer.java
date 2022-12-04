@@ -8,11 +8,11 @@ public class Arrayer {
 
     public static void quesOne() {
         String[] colors = {"Gul", "Grön", "Orange", "Blå", "Grå"};
-        //REPLACED WITH ENCHANCED FOR LOOP
-        //for(int i = 0; i < colors.length; i++)
         for (String color : colors) {
             System.out.println(color);
         }
+        //SIMPLIFIED VERSION OF ABOVE FOR LOOP
+        //for(int i = 0; i < colors.length; i++)
     }
 
     public static void quesTwo() {
