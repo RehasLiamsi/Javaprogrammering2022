@@ -1,9 +1,11 @@
 package se.iths.twentytwo.övningsuppgifter;
 
+import java.util.Random;
+
 public class Arrayer {
 
     public static void main(String[] args) {
-        quesTwo();
+        quesThree();
     }
 
     public static void quesOne() {
@@ -32,5 +34,29 @@ public class Arrayer {
                 sum -= numbers[i];*/
         }
         System.out.println(sum);
+    }
+
+    public static void quesThree() {
+        int[] numbers = new int[5];
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        int oddNumbers = 0;
+        Random randomNumber = new Random();
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = randomNumber.nextInt(100);
+            System.out.println(numbers[i]);
+            if (numbers[i] < min) {
+                min = numbers[i]; }
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+            if (numbers[i] % 2 != 0) {
+                oddNumbers++;
+            }
+        }
+        System.out.println("Minsta talet i arrayen är " + min);
+        System.out.println("Största talet i arrayen är " + max);
+        System.out.println(oddNumbers + " talen är udda i arrayen");
+
     }
 }
