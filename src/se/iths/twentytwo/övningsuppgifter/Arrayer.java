@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Arrayer {
 
     public static void main(String[] args) {
-        quesFour();
+        quesSevenA();
     }
 
     public static void quesOne() {
@@ -73,5 +73,17 @@ public class Arrayer {
         System.out.println("Summan för alla värden i arrayen är " + sum);
         double average = sum/arrayLength;
         System.out.println("Medelvärdet för alla värden i arrayen är " + average);
+    }
+
+    public static void quesSevenA() {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 7; j++) {
+                if (j == i)
+                    System.out.print("#");
+                else
+                    System.out.print("-");
+            }
+            System.out.println("");
+        }
     }
 }
