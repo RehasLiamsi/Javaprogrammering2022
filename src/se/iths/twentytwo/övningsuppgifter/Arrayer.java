@@ -1,11 +1,12 @@
 package se.iths.twentytwo.övningsuppgifter;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Arrayer {
 
     public static void main(String[] args) {
-        quesThree();
+        quesFour();
     }
 
     public static void quesOne() {
@@ -45,18 +46,32 @@ public class Arrayer {
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = randomNumber.nextInt(100);
             System.out.println(numbers[i]);
-            if (numbers[i] < min) {
-                min = numbers[i]; }
-            if (numbers[i] > max) {
+            if (numbers[i] < min)
+                min = numbers[i];
+            if (numbers[i] > max)
                 max = numbers[i];
-            }
-            if (numbers[i] % 2 != 0) {
+            if (numbers[i] % 2 != 0)
                 oddNumbers++;
-            }
         }
         System.out.println("Minsta talet i arrayen är " + min);
         System.out.println("Största talet i arrayen är " + max);
         System.out.println(oddNumbers + " talen är udda i arrayen");
+    }
 
+    public static void quesFour() {
+        Scanner sc = new Scanner(System.in);
+        Random randomNumber = new Random();
+        System.out.println("Hur lång vill du ha din array?");
+        int arrayLength = sc.nextInt();
+        int[] array = new int[arrayLength];
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            array[i] = randomNumber.nextInt();
+            System.out.println(array[i]);
+            sum += array[i];
+        }
+        System.out.println("Summan för alla värden i arrayen är " + sum);
+        double average = sum/arrayLength;
+        System.out.println("Medelvärdet för alla värden i arrayen är " + average);
     }
 }
