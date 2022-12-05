@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Arrayer {
 
     public static void main(String[] args) {
-        quesSevenC();
+        quesSevenD();
     }
 
     public static void quesOne() {
@@ -76,8 +76,10 @@ public class Arrayer {
     }
 
     public static void quesSevenA() {
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 8; j++) {
+        int rows = 4;
+        int columns = 8;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
                 if (j == i)
                     System.out.print("#");
                 else
@@ -88,8 +90,10 @@ public class Arrayer {
     }
 
     public static void quesSevenB() {
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 8; j++) {
+        int rows = 4;
+        int columns = 8;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
                 if (j == i || j == i + 4)
                     System.out.print("#");
                 else
@@ -106,6 +110,20 @@ public class Arrayer {
                     System.out.print("##");
                 else
                     System.out.print("--");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void quesSevenD() {
+        int rows = 4;
+        int columns = 8;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                if (i == 2 || j == 2 || j == 5)
+                    System.out.print("#");
+                else
+                    System.out.print("-");
             }
             System.out.println("");
         }
