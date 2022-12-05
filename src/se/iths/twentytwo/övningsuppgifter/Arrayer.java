@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Arrayer {
 
     public static void main(String[] args) {
-        quesSevenA();
+        quesSevenC();
     }
 
     public static void quesOne() {
@@ -77,11 +77,35 @@ public class Arrayer {
 
     public static void quesSevenA() {
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 7; j++) {
+            for (int j = 0; j < 8; j++) {
                 if (j == i)
                     System.out.print("#");
                 else
                     System.out.print("-");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void quesSevenB() {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (j == i || j == i + 4)
+                    System.out.print("#");
+                else
+                    System.out.print("-");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void quesSevenC() {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (j == i)
+                    System.out.print("##");
+                else
+                    System.out.print("--");
             }
             System.out.println("");
         }
