@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Arrayer {
 
     public static void main(String[] args) {
-        quesEight();
+        quesTen();
     }
 
     public static void quesOne() {
@@ -241,8 +241,8 @@ public class Arrayer {
         System.out.println("My unsorted array: " + Arrays.toString(myArray));
 
         for (int i = 0; i < myArray.length; i++) {
-            for (int j = i+1; j < myArray.length ; j++) {
-                if(myArray[i] > myArray[j]) {
+            for (int j = i + 1; j < myArray.length; j++) {
+                if (myArray[i] > myArray[j]) {
                     temp = myArray[i];
                     myArray[i] = myArray[j];
                     myArray[j] = temp;
@@ -250,6 +250,30 @@ public class Arrayer {
             }
         }
         System.out.println("Array after sorting: " + Arrays.toString(myArray));
+    }
+
+    public static void quesNine() {
+        int[][] array2D = new int[][]{ { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
+        System.out.println(Arrays.deepToString(array2D));
+    }
+
+    public static void quesTen() {
+        String[][] myArray = new String[4][8];
+        for (int row = 0; row < 4; row++) {
+            for (int column = 0; column < 8 ; column++) {
+                if (column == row || column == row + 4)
+                    myArray[row][column] = "#";
+                else
+                    myArray[row][column] = "-";
+            }
+        }
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 8; j++) {
+                System.out.print(myArray[i][j]);
+            }
+            System.out.println("");
+        }
     }
 }
 
