@@ -3,7 +3,7 @@ package se.iths.twentytwo.övningsuppgifter;
 public class Metoder {
 
     public static void main(String[] args) {
-
+        System.out.println(quesFour("Hi"));
     }
 
     //Question 2a
@@ -23,5 +23,19 @@ public class Metoder {
             temp *= a[i];
         }
         return temp;
+    }
+
+    public static void quesThree(String name, String city, byte favoriteNumber) {
+        System.out.println("Välkommen " + name + " från " + city + " med favorittal " + favoriteNumber);
+    }
+
+    public static int quesFour(String number){
+        int convertedNumber = 0;
+        try {
+            convertedNumber = Integer.parseInt(number);
+        } catch (NumberFormatException e) {
+            System.out.println("Fel format!");
+        }
+        return convertedNumber;
     }
 }
