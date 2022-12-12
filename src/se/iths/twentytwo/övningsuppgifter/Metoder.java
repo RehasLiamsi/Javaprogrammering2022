@@ -38,4 +38,9 @@ public class Metoder {
         }
         return convertedNumber;
     }
+
+    public static String quesFive(String input) {
+        String extendedString = "<p>" + input + "</p>";
+        return extendedString;
+    }
 }
