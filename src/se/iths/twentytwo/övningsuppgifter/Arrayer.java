@@ -1,12 +1,13 @@
 package se.iths.twentytwo.övningsuppgifter;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Arrayer {
 
     public static void main(String[] args) {
-        quesSevenK();
+        quesEight();
     }
 
     public static void quesOne() {
@@ -228,6 +229,27 @@ public class Arrayer {
             }
             System.out.println("");
         }
+    }
+
+    public static void quesEight() {
+        int temp = 0;
+        int[] myArray = new int[5];
+        Random randomNumber = new Random();
+        for (int i = 0; i < myArray.length; i++) {
+            myArray[i] = randomNumber.nextInt(1, 21);
+        }
+        System.out.println("My unsorted array: " + Arrays.toString(myArray));
+
+        for (int i = 0; i < myArray.length; i++) {
+            for (int j = i+1; j < myArray.length ; j++) {
+                if(myArray[i] > myArray[j]) {
+                    temp = myArray[i];
+                    myArray[i] = myArray[j];
+                    myArray[j] = temp;
+                }
+            }
+        }
+        System.out.println("Array after sorting: " + Arrays.toString(myArray));
     }
 }
 
