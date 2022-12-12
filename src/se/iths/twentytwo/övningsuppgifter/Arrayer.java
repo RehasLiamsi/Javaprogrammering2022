@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Arrayer {
 
     public static void main(String[] args) {
-        quesSevenF();
+        quesSevenH();
     }
 
     public static void quesOne() {
@@ -71,7 +71,7 @@ public class Arrayer {
             sum += array[i];
         }
         System.out.println("Summan för alla värden i arrayen är " + sum);
-        double average = sum/arrayLength;
+        double average = sum / arrayLength;
         System.out.println("Medelvärdet för alla värden i arrayen är " + average);
     }
 
@@ -139,7 +139,8 @@ public class Arrayer {
                     System.out.print("#");
                 else
                     System.out.print("-");
-            }x--;
+            }
+            x--;
             System.out.println("");
         }
     }
@@ -160,4 +161,42 @@ public class Arrayer {
             }
         }
     }
+
+    public static void quesSevenG() {
+        for (int row = 0; row < 4; row++) {
+            for (int column = 0; column < 6; column++) {
+                if (row < 3 && column < 3)
+                    System.out.print("#");
+                else
+                    System.out.print("-");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void quesSevenH() {
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 8; col++) {
+                if (col == row + 2 || col > 5 && row < 2)
+                    System.out.print("#");
+                else
+                    System.out.print("-");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void quesSevenI() {
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 5; col++) {
+                if (col == 2 && row != 2)
+                    System.out.print("#");
+                else
+                    System.out.print("-");
+            }
+            System.out.println("");
+        }
+    }
 }
+
+
