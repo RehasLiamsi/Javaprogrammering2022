@@ -2,8 +2,16 @@ package se.iths.twentytwo.övningsuppgifter;
 
 public class Metoder {
 
-    public static void main(String[] args) {
-        System.out.println(quesFour("Hi"));
+    public static void main(String[] args)
+    {
+        System.out.println("Question 2a: " + add(1.4,2.5));
+        System.out.println("Question 2b: " + multi(2.5,2,5));
+        System.out.println("Question 2c: " + unlimitedParameters(2,5,4,6,7));
+        System.out.print("Question 3: "); quesThree("Timmy","New York", (byte) 3);
+        System.out.print("Question 4 with wrong format: "); quesFour("Tim");
+        System.out.print("Question 4 with correct format: "); quesFour("4");
+        System.out.println("Question 5: " + quesFive("Wow"));
+        System.out.println("Question 6: " + daysInMonth(Month.MARCH));
     }
 
     //Question 2a
@@ -29,18 +37,39 @@ public class Metoder {
         System.out.println("Välkommen " + name + " från " + city + " med favorittal " + favoriteNumber);
     }
 
-    public static int quesFour(String number){
-        int convertedNumber = 0;
+    public static void quesFour(String number){
         try {
-            convertedNumber = Integer.parseInt(number);
+            System.out.println(Integer.parseInt(number));
         } catch (NumberFormatException e) {
             System.out.println("Fel format!");
         }
-        return convertedNumber;
     }
 
     public static String quesFive(String input) {
-        String extendedString = "<p>" + input + "</p>";
-        return extendedString;
+        return "<p>" + input + "</p>";
+    }
+
+    //quesSix
+    enum Month {
+        JANUARY,
+        FEBRUARY,
+        MARCH,
+        APRIL,
+        MAY,
+        JUNE,
+        JULY,
+        AUGUST,
+        SEPTEMBER,
+        OCTOBER,
+        NOVEMBER,
+        DECEMBER
+    }
+
+    public static int daysInMonth(Month month) {
+        return switch (month) {
+            case JANUARY, MARCH, MAY, JULY, AUGUST, OCTOBER, DECEMBER -> 31;
+            case FEBRUARY -> 28;
+            case APRIL, JUNE, SEPTEMBER, NOVEMBER -> 30;
+        };
     }
 }
