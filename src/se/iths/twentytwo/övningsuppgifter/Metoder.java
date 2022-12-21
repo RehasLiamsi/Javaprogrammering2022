@@ -35,7 +35,16 @@ public class Metoder {
         System.out.println("Question 14: " + average(2,3,4,5));
         System.out.println("Question 14: " + average(2,3,4,5,6));
         System.out.println("Question 15: " + factorial(5));
-        System.out.println("Question 15 variation: " + factorial2(4));
+        System.out.println("Question 16: " + factorialRecursion(4));
+        System.out.print("Question 17: Fibonacci series = ");
+        fibonacci(10);
+        System.out.print("\nQuestion 17: Fibonacci with recursion = ");
+            int number = 10;
+            int index = 0;
+            while(index != number) {
+                System.out.print(fibonacciRecursion(index) + " ");
+                index++;
+            }
     }
 
     //Question 2a
@@ -198,11 +207,35 @@ public class Metoder {
         return factorial;
     }
 
-    //Question Fifteen variation
-    public static int factorial2(int number){
+    //Question Sixteen
+    public static int factorialRecursion(int number){
         if (number == 1)
             return 1;
         else
-            return (number * factorial2(number - 1));
+            return (number * factorialRecursion(number - 1));
+    }
+
+    //Question Seventeen
+    public static void fibonacci(int number){
+        int previousNumber = 0;
+        int nextNumber = 1;
+        int sum = 1;
+
+        for (int i = 0; i < number; ++i) {
+            System.out.print(previousNumber + " ");
+            sum = previousNumber + nextNumber;
+            previousNumber = nextNumber;
+            nextNumber = sum;
+        }
+    }
+
+    public static int fibonacciRecursion (int i) {
+        if (i == 0)
+            return 0;
+        if (i <= 2)
+            return 1;
+
+        int fibonacciNumber = fibonacciRecursion(i - 1) + fibonacciRecursion(i - 2);
+        return fibonacciNumber;
     }
 }
