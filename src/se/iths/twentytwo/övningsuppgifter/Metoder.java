@@ -27,6 +27,7 @@ public class Metoder {
         System.out.println("Question 10: 259 fahrenheit = " + fahrenheitToCelsius(259) + " celsius");
         System.out.println("Question 11a: " + sumOf100Numbers());
         System.out.println("Question 11b: " + sumOfNumbers(15));
+        System.out.println("Question 12: Piano backwards is = " + backwardsString("piano"));
     }
 
     //Question 2a
@@ -136,5 +137,16 @@ public class Metoder {
             sum += i;
         }
         return sum;
+    }
+
+    //Question Twelve
+    public static String backwardsString(String word) {
+        char ch;
+        String reverseWord = "";
+        for (int i = 0; i < word.length(); i++) {
+            ch = word.charAt(i);
+            reverseWord = ch + reverseWord;
+        }
+        return reverseWord;
     }
 }
