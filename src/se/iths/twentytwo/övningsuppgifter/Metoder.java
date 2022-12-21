@@ -28,6 +28,8 @@ public class Metoder {
         System.out.println("Question 11a: " + sumOf100Numbers());
         System.out.println("Question 11b: " + sumOfNumbers(15));
         System.out.println("Question 12: Piano backwards is = " + backwardsString("piano"));
+        System.out.println("Question 13: Is 37 a prime number? " + isPrimeNumber(37));
+        System.out.println("Question 13: Is 50 a prime number? " + isPrimeNumber(50));
     }
 
     //Question 2a
@@ -118,11 +120,11 @@ public class Metoder {
 
     //Question Ten
     public static double fahrenheitToCelsius(double fahrenheit) {
-        return ((fahrenheit-32)*5)/9;
+        return ((fahrenheit - 32) * 5) / 9;
     }
 
     //Question Eleven a
-    public static int sumOf100Numbers(){
+    public static int sumOf100Numbers() {
         int sum = 0;
         for (int i = 0; i < 101; i++) {
             sum += i;
@@ -131,7 +133,7 @@ public class Metoder {
     }
 
     //Question Eleven b
-    public static int sumOfNumbers(int numberOfNumbersToAdd){
+    public static int sumOfNumbers(int numberOfNumbersToAdd) {
         int sum = 0;
         for (int i = 0; i <= numberOfNumbersToAdd; i++) {
             sum += i;
@@ -148,5 +150,17 @@ public class Metoder {
             reverseWord = ch + reverseWord;
         }
         return reverseWord;
+    }
+
+    //Question Thirteen
+    public static boolean isPrimeNumber(int number) {
+        boolean flag = true;
+        for (int i = 2; i <= number / 2; ++i) {
+            if (number % i == 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
     }
 }
