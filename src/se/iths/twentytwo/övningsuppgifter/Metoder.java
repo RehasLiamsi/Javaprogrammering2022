@@ -34,6 +34,9 @@ public class Metoder {
         System.out.println("Question 14: " + average(2,3,4));
         System.out.println("Question 14: " + average(2,3,4,5));
         System.out.println("Question 14: " + average(2,3,4,5,6));
+        System.out.println("Question 15: " + factorial(5));
+        System.out.println("Question 15: " + factorial(2));
+        System.out.println("Question 15: " + factorial(4));
     }
 
     //Question 2a
@@ -183,5 +186,16 @@ public class Metoder {
 
     public static int average(int number1, int number2, int number3, int number4, int number5) {
         return (number1 + number2 + number3 + number4 + number5) / 2;
+    }
+
+    //AVANCERADE UPPGIFTER/REKURSION
+
+    //Question Fifteen
+    public static int factorial(int number){
+        int factorial = 1;
+        for (int i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+        return factorial;
     }
 }
