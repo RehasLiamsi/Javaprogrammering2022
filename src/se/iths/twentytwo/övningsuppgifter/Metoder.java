@@ -45,6 +45,8 @@ public class Metoder {
                 System.out.print(fibonacciRecursion(index) + " ");
                 index++;
             }
+        System.out.print("\nQuestion 18: ");
+            reverseStringRecursion("piano");
     }
 
     //Question 2a
@@ -237,5 +239,14 @@ public class Metoder {
 
         int fibonacciNumber = fibonacciRecursion(i - 1) + fibonacciRecursion(i - 2);
         return fibonacciNumber;
+    }
+
+    public static void reverseStringRecursion(String word) {
+        if ((word == null || word.length() <= 1))
+            System.out.print(word);
+        else {
+            System.out.print(word.charAt(word.length()-1));
+            reverseStringRecursion(word.substring(0,word.length()-1));
+        }
     }
 }
