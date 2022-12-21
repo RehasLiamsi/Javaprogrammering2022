@@ -35,8 +35,7 @@ public class Metoder {
         System.out.println("Question 14: " + average(2,3,4,5));
         System.out.println("Question 14: " + average(2,3,4,5,6));
         System.out.println("Question 15: " + factorial(5));
-        System.out.println("Question 15: " + factorial(2));
-        System.out.println("Question 15: " + factorial(4));
+        System.out.println("Question 15 variation: " + factorial2(4));
     }
 
     //Question 2a
@@ -197,5 +196,13 @@ public class Metoder {
             factorial *= i;
         }
         return factorial;
+    }
+
+    //Question Fifteen variation
+    public static int factorial2(int number){
+        if (number == 1)
+            return 1;
+        else
+            return (number * factorial2(number - 1));
     }
 }
