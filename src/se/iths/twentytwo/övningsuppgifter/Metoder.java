@@ -12,17 +12,21 @@ public class Metoder {
         System.out.print("Question 3: ");
         quesThree("Timmy", "New York", (byte) 3);
         System.out.print("Question 4 with wrong format: ");
-        quesFour("Tim");
+        stringToIntConverter("Tim");
         System.out.print("Question 4 with correct format: ");
-        quesFour("4");
-        System.out.println("Question 5: " + quesFive("Wow"));
+        stringToIntConverter("4");
+        System.out.println("Question 5: " + addPrefixAndSuffixToString("Wow"));
         System.out.println("Question 6: " + daysInMonth(Month.MARCH));
-        System.out.println("Question 7: " + quesSeven("abcde"));
+        System.out.println("Question 7: " + substringOfWord("abcde"));
         System.out.print("Question 8 with wrong format: ");
         year("21-11-02");
         System.out.print("Question 8 with correct format: ");
         year("2021-11-02");
+        System.out.print("Question 9: ");
         daysBetween("2017-08-30", "2017-09-02");
+        System.out.println("Question 10: 259 fahrenheit = " + fahrenheitToCelsius(259) + " celsius");
+        System.out.println("Question 11a: " + sumOf100Numbers());
+        System.out.println("Question 11b: " + sumOfNumbers(15));
     }
 
     //Question 2a
@@ -48,7 +52,8 @@ public class Metoder {
         System.out.println("Välkommen " + name + " från " + city + " med favorittal " + favoriteNumber);
     }
 
-    public static void quesFour(String number) {
+    //Question Four
+    public static void stringToIntConverter(String number) {
         try {
             System.out.println(Integer.parseInt(number));
         } catch (NumberFormatException e) {
@@ -56,11 +61,12 @@ public class Metoder {
         }
     }
 
-    public static String quesFive(String input) {
+    //Question Five
+    public static String addPrefixAndSuffixToString(String input) {
         return "<p>" + input + "</p>";
     }
 
-    //quesSix
+    //Question Six
     enum Month {
         JANUARY,
         FEBRUARY,
@@ -84,10 +90,12 @@ public class Metoder {
         };
     }
 
-    public static String quesSeven(String word) {
+    //Question Seven
+    public static String substringOfWord(String word) {
         return word.substring(0, 3);
     }
 
+    //Question Eight
     public static void year(String input) {
         if (input.length() == 10) {
             String substring = input.substring(0, 4);
@@ -98,7 +106,7 @@ public class Metoder {
         }
     }
 
-    //QuesNine
+    //Question Nine
     public static void daysBetween(String dateBefore, String dateAfter) {
         LocalDate dateOne = LocalDate.parse(dateBefore);
         LocalDate dateTwo = LocalDate.parse(dateAfter);
@@ -107,5 +115,26 @@ public class Metoder {
         System.out.println("Days between are " + noOfDaysBetween);
     }
 
+    //Question Ten
+    public static double fahrenheitToCelsius(double fahrenheit) {
+        return ((fahrenheit-32)*5)/9;
+    }
 
+    //Question Eleven a
+    public static int sumOf100Numbers(){
+        int sum = 0;
+        for (int i = 0; i < 101; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    //Question Eleven b
+    public static int sumOfNumbers(int numberOfNumbersToAdd){
+        int sum = 0;
+        for (int i = 0; i <= numberOfNumbersToAdd; i++) {
+            sum += i;
+        }
+        return sum;
+    }
 }
