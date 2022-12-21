@@ -30,6 +30,10 @@ public class Metoder {
         System.out.println("Question 12: Piano backwards is = " + backwardsString("piano"));
         System.out.println("Question 13: Is 37 a prime number? " + isPrimeNumber(37));
         System.out.println("Question 13: Is 50 a prime number? " + isPrimeNumber(50));
+        System.out.println("Question 14: " + average(3,4));
+        System.out.println("Question 14: " + average(2,3,4));
+        System.out.println("Question 14: " + average(2,3,4,5));
+        System.out.println("Question 14: " + average(2,3,4,5,6));
     }
 
     //Question 2a
@@ -162,5 +166,22 @@ public class Metoder {
             }
         }
         return flag;
+    }
+
+    //Question Fourteen
+    public static int average(int number1, int number2) {
+        return (number1 + number2) / 2;
+    }
+
+    public static int average(int number1, int number2, int number3) {
+        return (number1 + number2 + number3) / 2;
+    }
+
+    public static int average(int number1, int number2, int number3, int number4) {
+        return (number1 + number2 + number3 + number4) / 2;
+    }
+
+    public static int average(int number1, int number2, int number3, int number4, int number5) {
+        return (number1 + number2 + number3 + number4 + number5) / 2;
     }
 }
