@@ -1,5 +1,8 @@
 package se.iths.twentytwo.övningsuppgifter;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
 public class Metoder {
 
     public static void main(String[] args) {
@@ -19,6 +22,7 @@ public class Metoder {
         year("21-11-02");
         System.out.print("Question 8 with correct format: ");
         year("2021-11-02");
+        daysBetween("2017-08-30", "2017-09-02");
     }
 
     //Question 2a
@@ -92,6 +96,16 @@ public class Metoder {
             System.out.println("Wrong date format");
 
         }
-
     }
+
+    //QuesNine
+    public static void daysBetween(String dateBefore, String dateAfter) {
+        LocalDate dateOne = LocalDate.parse(dateBefore);
+        LocalDate dateTwo = LocalDate.parse(dateAfter);
+
+        long noOfDaysBetween = ChronoUnit.DAYS.between(dateOne, dateTwo);
+        System.out.println("Days between are " + noOfDaysBetween);
+    }
+
+
 }
