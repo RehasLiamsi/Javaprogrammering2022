@@ -2,6 +2,7 @@ package se.iths.twentytwo.övningsuppgifter;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
 
 public class Metoder {
 
@@ -38,6 +39,7 @@ public class Metoder {
         System.out.println("Question 16: " + factorialRecursion(4));
         System.out.print("Question 17: Fibonacci series = ");
         fibonacci(10);
+
         System.out.print("\nQuestion 17: Fibonacci with recursion = ");
             int number = 10;
             int index = 0;
@@ -45,8 +47,16 @@ public class Metoder {
                 System.out.print(fibonacciRecursion(index) + " ");
                 index++;
             }
+
         System.out.print("\nQuestion 18: ");
             reverseStringRecursion("piano");
+
+        int [] numberArray = {1,2,3,4,5};
+            System.out.print("\nQuestion 19: ");
+            int[] copyOfNumberArray = copyOfArray(numberArray);
+            for (int copied : copyOfNumberArray) {
+            System.out.print(copied);
+            }
     }
 
     //Question 2a
@@ -241,6 +251,7 @@ public class Metoder {
         return fibonacciNumber;
     }
 
+    //Question Eighteen
     public static void reverseStringRecursion(String word) {
         if ((word == null || word.length() <= 1))
             System.out.print(word);
@@ -249,4 +260,12 @@ public class Metoder {
             reverseStringRecursion(word.substring(0,word.length()-1));
         }
     }
+
+    //Question Nineteen
+    public static int[] copyOfArray(int[] array) {
+        return Arrays.copyOf(array, array.length);
+    }
+
+    //Question Twenty
+
 }
