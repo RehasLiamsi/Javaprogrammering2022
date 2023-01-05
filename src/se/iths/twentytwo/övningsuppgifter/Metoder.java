@@ -2,7 +2,9 @@ package se.iths.twentytwo.övningsuppgifter;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Metoder {
 
@@ -58,9 +60,14 @@ public class Metoder {
 
         System.out.println("Question 20: " + Arrays.toString(filterLessThan(new int[]{1, 5, 7, 9, 2, 4, 3}, 4)));
 
-        int[] array = {7,2,9,4,5,1,10};
+        int[] array = {7, 2, 9, 4, 5, 1, 10};
         System.out.print("Question 22: Sort array " + Arrays.toString(array) + " ");
         bubbleSort(array);
+
+        int[] firstArray = {4, 2, 7, 5};
+        int[] secondArray = {1, 22, 13, 3};
+        List<Integer> list = merge(firstArray, secondArray);
+        System.out.print("Question 23: " + Arrays.toString(list.toArray()));
     }
 
     //Question 2a
@@ -302,5 +309,37 @@ public class Metoder {
             }
         }
         System.out.println("Sorted array = " + Arrays.toString(arrayToSort));
+    }
+
+    //Question TwentyThree
+    public static ArrayList<Integer> merge(int[] firstArray, int[] secondArray) {
+        int temp = 0;
+        for (int i = 0; i < firstArray.length; i++) {
+            for (int j = i + 1; j < firstArray.length; j++) {
+                if (firstArray[i] > firstArray[j]) {
+                    temp = firstArray[i];
+                    firstArray[i] = firstArray[j];
+                    firstArray[j] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < secondArray.length; i++) {
+            for (int j = i + 1; j < secondArray.length; j++) {
+                if (secondArray[i] > secondArray[j]) {
+                    temp = secondArray[i];
+                    secondArray[i] = secondArray[j];
+                    secondArray[j] = temp;
+                }
+            }
+        }
+
+        ArrayList<Integer> mergedList = new ArrayList();
+        for (int i = 0; i < firstArray.length; i++) {
+            if (secondArray[i] < firstArray[i])
+                mergedList.add(secondArray[i]);
+            else
+                mergedList.add(firstArray[i]);
+        }
+        return mergedList;
     }
 }
