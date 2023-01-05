@@ -54,16 +54,13 @@ public class Metoder {
         System.out.print("\nQuestion 19: ");
         int[] numberArray = {1, 2, 3, 4, 5};
         int[] copyOfNumberArray = copyOfArray(numberArray);
-        for (int copied : copyOfNumberArray) {
-            System.out.print(copied);
-        }
+        System.out.println(Arrays.toString(copyOfNumberArray));
 
-        System.out.print("\nQuestion 20: [");
-        for (int i = 0; i < filterLessThan(new int[]{1, 5, 7, 9, 2, 4, 3}, 4).length; i++) {
-            System.out.print(filterLessThan(new int[]{1, 5, 7, 9, 2, 4, 3}, 4)[i]);
-        }
-        System.out.print("]");
+        System.out.println("Question 20: " + Arrays.toString(filterLessThan(new int[]{1, 5, 7, 9, 2, 4, 3}, 4)));
 
+        int[] array = {7,2,9,4,5,1,10};
+        System.out.print("Question 22: Sort array " + Arrays.toString(array) + " ");
+        bubbleSort(array);
     }
 
     //Question 2a
@@ -290,5 +287,20 @@ public class Metoder {
             }
         }
         return newArray;
+    }
+
+    //Question TwentyTwo
+    public static void bubbleSort(int[] arrayToSort) {
+        int temp = 0;
+        for (int i = 0; i < arrayToSort.length; i++) {
+            for (int j = i + 1; j < arrayToSort.length; j++) {
+                if (arrayToSort[i] > arrayToSort[j]) {
+                    temp = arrayToSort[i];
+                    arrayToSort[i] = arrayToSort[j];
+                    arrayToSort[j] = temp;
+                }
+            }
+        }
+        System.out.println("Sorted array = " + Arrays.toString(arrayToSort));
     }
 }
