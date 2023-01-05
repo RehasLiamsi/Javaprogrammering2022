@@ -31,32 +31,39 @@ public class Metoder {
         System.out.println("Question 12: Piano backwards is = " + backwardsString("piano"));
         System.out.println("Question 13: Is 37 a prime number? " + isPrimeNumber(37));
         System.out.println("Question 13: Is 50 a prime number? " + isPrimeNumber(50));
-        System.out.println("Question 14: " + average(3,4));
-        System.out.println("Question 14: " + average(2,3,4));
-        System.out.println("Question 14: " + average(2,3,4,5));
-        System.out.println("Question 14: " + average(2,3,4,5,6));
+        System.out.println("Question 14: " + average(3, 4));
+        System.out.println("Question 14: " + average(2, 3, 4));
+        System.out.println("Question 14: " + average(2, 3, 4, 5));
+        System.out.println("Question 14: " + average(2, 3, 4, 5, 6));
         System.out.println("Question 15: " + factorial(5));
         System.out.println("Question 16: " + factorialRecursion(4));
         System.out.print("Question 17: Fibonacci series = ");
         fibonacci(10);
 
         System.out.print("\nQuestion 17: Fibonacci with recursion = ");
-            int number = 10;
-            int index = 0;
-            while(index != number) {
-                System.out.print(fibonacciRecursion(index) + " ");
-                index++;
-            }
+        int number = 10;
+        int index = 0;
+        while (index != number) {
+            System.out.print(fibonacciRecursion(index) + " ");
+            index++;
+        }
 
         System.out.print("\nQuestion 18: ");
-            reverseStringRecursion("piano");
+        reverseStringRecursion("piano");
 
-        int [] numberArray = {1,2,3,4,5};
-            System.out.print("\nQuestion 19: ");
-            int[] copyOfNumberArray = copyOfArray(numberArray);
-            for (int copied : copyOfNumberArray) {
+        System.out.print("\nQuestion 19: ");
+        int[] numberArray = {1, 2, 3, 4, 5};
+        int[] copyOfNumberArray = copyOfArray(numberArray);
+        for (int copied : copyOfNumberArray) {
             System.out.print(copied);
-            }
+        }
+
+        System.out.print("\nQuestion 20: [");
+        for (int i = 0; i < filterLessThan(new int[]{1, 5, 7, 9, 2, 4, 3}, 4).length; i++) {
+            System.out.print(filterLessThan(new int[]{1, 5, 7, 9, 2, 4, 3}, 4)[i]);
+        }
+        System.out.print("]");
+
     }
 
     //Question 2a
@@ -211,7 +218,7 @@ public class Metoder {
     //AVANCERADE UPPGIFTER/REKURSION
 
     //Question Fifteen
-    public static int factorial(int number){
+    public static int factorial(int number) {
         int factorial = 1;
         for (int i = 1; i <= number; i++) {
             factorial *= i;
@@ -220,7 +227,7 @@ public class Metoder {
     }
 
     //Question Sixteen
-    public static int factorialRecursion(int number){
+    public static int factorialRecursion(int number) {
         if (number == 1)
             return 1;
         else
@@ -228,7 +235,7 @@ public class Metoder {
     }
 
     //Question Seventeen
-    public static void fibonacci(int number){
+    public static void fibonacci(int number) {
         int previousNumber = 0;
         int nextNumber = 1;
         int sum = 1;
@@ -241,7 +248,7 @@ public class Metoder {
         }
     }
 
-    public static int fibonacciRecursion (int i) {
+    public static int fibonacciRecursion(int i) {
         if (i == 0)
             return 0;
         if (i <= 2)
@@ -256,8 +263,8 @@ public class Metoder {
         if ((word == null || word.length() <= 1))
             System.out.print(word);
         else {
-            System.out.print(word.charAt(word.length()-1));
-            reverseStringRecursion(word.substring(0,word.length()-1));
+            System.out.print(word.charAt(word.length() - 1));
+            reverseStringRecursion(word.substring(0, word.length() - 1));
         }
     }
 
@@ -267,5 +274,21 @@ public class Metoder {
     }
 
     //Question Twenty
-
+    public static int[] filterLessThan(int[] array, int value) {
+        int size = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < value) {
+                size++;
+            }
+        }
+        int[] newArray = new int[size];
+        int j = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < value) {
+                newArray[j] = array[i];
+                j++;
+            }
+        }
+        return newArray;
+    }
 }
