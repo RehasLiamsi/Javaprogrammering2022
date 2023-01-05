@@ -66,8 +66,8 @@ public class Metoder {
 
         int[] firstArray = {4, 2, 7, 5};
         int[] secondArray = {1, 22, 13, 3};
-        List<Integer> list = merge(firstArray, secondArray);
-        System.out.print("Question 23: " + Arrays.toString(list.toArray()));
+        int[] merged = merge(firstArray, secondArray);
+        System.out.print("Question 23: " + Arrays.toString(merged));
     }
 
     //Question 2a
@@ -312,7 +312,7 @@ public class Metoder {
     }
 
     //Question TwentyThree
-    public static ArrayList<Integer> merge(int[] firstArray, int[] secondArray) {
+    public static int[] merge(int[] firstArray, int[] secondArray) {
         int temp = 0;
         for (int i = 0; i < firstArray.length; i++) {
             for (int j = i + 1; j < firstArray.length; j++) {
@@ -333,13 +333,36 @@ public class Metoder {
             }
         }
 
-        ArrayList<Integer> mergedList = new ArrayList();
-        for (int i = 0; i < firstArray.length; i++) {
-            if (secondArray[i] < firstArray[i])
-                mergedList.add(secondArray[i]);
-            else
-                mergedList.add(firstArray[i]);
+        int[] mergedArray = new int[firstArray.length + secondArray.length];
+        int i = 0, j = 0, k = 0;
+
+        while(i < firstArray.length && j < secondArray.length) {
+            if (firstArray[i] <= secondArray[j]) {
+                mergedArray[k] = firstArray[i];
+                i++;
+            }
+            else {
+                mergedArray[k] = secondArray[j];
+                j++;
+            }
+            k++;
         }
-        return mergedList;
+
+        while(i < firstArray.length) {
+            mergedArray[k] = firstArray[i];
+            i++;
+            k++;
+        }
+        while(j < secondArray.length) {
+            mergedArray[k] = secondArray[j];
+            j++;
+            k++;
+        }
+
+        return mergedArray;
+    }
+
+    //Question TwentyFour
+    public static void mergeSort(int[] array) {
     }
 }
