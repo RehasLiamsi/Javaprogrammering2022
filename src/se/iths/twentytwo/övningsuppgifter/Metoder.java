@@ -66,8 +66,12 @@ public class Metoder {
 
         int[] firstArray = {4, 2, 7, 5};
         int[] secondArray = {1, 22, 13, 3};
-        int[] merged = merge(firstArray, secondArray);
-        System.out.print("Question 23: " + Arrays.toString(merged));
+        int[] merged = sortArraysForMergeSort(firstArray, secondArray);
+        System.out.println("Question 23: " + Arrays.toString(merged));
+
+        int[] arrayForMergeSort = {4,78,23,1,9,10,5};
+        mergeSort(arrayForMergeSort);
+        System.out.println("Question 24: " + Arrays.toString(arrayForMergeSort));
     }
 
     //Question 2a
@@ -312,7 +316,7 @@ public class Metoder {
     }
 
     //Question TwentyThree
-    public static int[] merge(int[] firstArray, int[] secondArray) {
+    public static int[] sortArraysForMergeSort(int[] firstArray, int[] secondArray) {
         int temp = 0;
         for (int i = 0; i < firstArray.length; i++) {
             for (int j = i + 1; j < firstArray.length; j++) {
@@ -332,11 +336,17 @@ public class Metoder {
                 }
             }
         }
-
         int[] mergedArray = new int[firstArray.length + secondArray.length];
+        return merge(mergedArray,firstArray,secondArray);
+    }
+
+    public static int[] merge(int[] mergedArray, int[] firstArray, int[] secondArray) {
+        int firstArrayLength = firstArray.length;
+        int secondArrayLength = secondArray.length;
+
         int i = 0, j = 0, k = 0;
 
-        while(i < firstArray.length && j < secondArray.length) {
+        while(i < firstArrayLength && j < secondArrayLength) {
             if (firstArray[i] <= secondArray[j]) {
                 mergedArray[k] = firstArray[i];
                 i++;
@@ -348,12 +358,12 @@ public class Metoder {
             k++;
         }
 
-        while(i < firstArray.length) {
+        while(i < firstArrayLength) {
             mergedArray[k] = firstArray[i];
             i++;
             k++;
         }
-        while(j < secondArray.length) {
+        while(j < secondArrayLength) {
             mergedArray[k] = secondArray[j];
             j++;
             k++;
@@ -364,5 +374,28 @@ public class Metoder {
 
     //Question TwentyFour
     public static void mergeSort(int[] array) {
+        int arrayLength = array.length;
+
+        if (arrayLength < 2) {
+            return;
+        }
+
+        int midIndex = arrayLength / 2;
+        int[] firstHalfOfArray = new int[midIndex];
+        int[] secondHalfOfArray = new int[arrayLength - midIndex];
+
+        for (int i = 0; i < midIndex; i++) {
+            firstHalfOfArray[i] = array[i];
+        }
+
+        for (int i = midIndex; i < arrayLength; i++) {
+            secondHalfOfArray[i - midIndex] = array[i];
+        }
+
+        mergeSort(firstHalfOfArray);
+        mergeSort(secondHalfOfArray);
+
+        merge(array, firstHalfOfArray, secondHalfOfArray);
+
     }
 }
