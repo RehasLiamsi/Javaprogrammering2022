@@ -81,7 +81,15 @@ public class Metoder {
             System.out.println("Vowel input");
         if (!isVowel(consonant))
             System.out.println("Consonant input");
-       isVowel(inputNumber);
+        //isVowel(inputNumber);
+
+        System.out.print("Question 26: ");
+        System.out.println("2 is an even number: " + isEven(2));
+        System.out.println("7 is an even number: " + isEven(7));
+
+        System.out.println("Question 27: " + isAuthorised("snuff", "bark", "piggy"));
+        System.out.println("Question 27: " + isAuthorised("toy", "bark", "piggy"));
+
     }
 
     //Question 2a
@@ -417,9 +425,23 @@ public class Metoder {
                 return true;
             else
                 return false;
-        }
-
-        else
+        } else
             throw new RuntimeException("Invalid input format!");
+    }
+
+    //Question TwentySix
+    public static boolean isEven(int input) {
+        return input % 2 == 0;
+    }
+
+    //Question TwentySeven
+    public static boolean isAuthorised(String firstPassword, String secondPassword, String thirdPassword) {
+        if (firstPassword.equals("piggy") || firstPassword.equals("snuff") || firstPassword.equals("bark")) {
+            if (secondPassword.equals("piggy") || secondPassword.equals("snuff") || secondPassword.equals("bark")) {
+                if (thirdPassword.equals("piggy") || thirdPassword.equals("snuff") || thirdPassword.equals("bark")) {
+                    return true;
+                } else return false;
+            } else return false;
+        } else return false;
     }
 }
