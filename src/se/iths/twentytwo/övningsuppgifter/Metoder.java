@@ -2,94 +2,172 @@ package se.iths.twentytwo.övningsuppgifter;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.Scanner;
 
 public class Metoder {
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("Question 2a: " + add(1.4, 2.5));
-        System.out.println("Question 2b: " + multi(2.5, 2, 5));
-        System.out.println("Question 2c: " + unlimitedParameters(2, 5, 4, 6, 7));
-        System.out.print("Question 3: ");
-        quesThree("Timmy", "New York", (byte) 3);
-        System.out.print("Question 4 with wrong format: ");
-        stringToIntConverter("Tim");
-        System.out.print("Question 4 with correct format: ");
-        stringToIntConverter("4");
-        System.out.println("Question 5: " + addPrefixAndSuffixToString("Wow"));
-        System.out.println("Question 6: " + daysInMonth(Month.MARCH));
-        System.out.println("Question 7: " + substringOfWord("abcde"));
-        System.out.print("Question 8 with wrong format: ");
-        year("21-11-02");
-        System.out.print("Question 8 with correct format: ");
-        year("2021-11-02");
-        System.out.print("Question 9: ");
-        daysBetween("2017-08-30", "2017-09-02");
-        System.out.println("Question 10: 259 fahrenheit = " + fahrenheitToCelsius(259) + " celsius");
-        System.out.println("Question 11a: " + sumOf100Numbers());
-        System.out.println("Question 11b: " + sumOfNumbers(15));
-        System.out.println("Question 12: Piano backwards is = " + backwardsString("piano"));
-        System.out.println("Question 13: Is 37 a prime number? " + isPrimeNumber(37));
-        System.out.println("Question 13: Is 50 a prime number? " + isPrimeNumber(50));
-        System.out.println("Question 14: " + average(3, 4));
-        System.out.println("Question 14: " + average(2, 3, 4));
-        System.out.println("Question 14: " + average(2, 3, 4, 5));
-        System.out.println("Question 14: " + average(2, 3, 4, 5, 6));
-        System.out.println("Question 15: " + factorial(5));
-        System.out.println("Question 16: " + factorialRecursion(4));
-        System.out.print("Question 17: Fibonacci series = ");
-        fibonacci(10);
+        while (true) {
+            System.out.println("\nExercises 2 - 28. Enter question number to explore.");
+            int input = sc.nextInt();
+            sc.nextLine();
+            switch (input) {
+                case 2:
+                    System.out.println("a, b or c?");
+                    String inputOption = sc.nextLine();
 
-        System.out.print("\nQuestion 17: Fibonacci with recursion = ");
-        int number = 10;
-        int index = 0;
-        while (index != number) {
-            System.out.print(fibonacciRecursion(index) + " ");
-            index++;
+                    switch (inputOption) {
+                        case "a":
+                            System.out.println("Question 2a: " + add(1.4, 2.5));
+                            break;
+                        case "b":
+                            System.out.println("Question 2b: " + multi(2.5, 2, 5));
+                            break;
+                        case "c":
+                            System.out.println("Question 2c: " + unlimitedParameters(2, 5, 4, 6, 7));
+                            break;
+                        default:
+                            System.out.println("Invalid");
+                    }
+                    break;
+                case 3:
+                    System.out.print("Question 3: ");
+                    quesThree("Timmy", "New York", (byte) 3);
+                    break;
+                case 4:
+                    System.out.print("Question 4 with wrong format: ");
+                    stringToIntConverter("Tim");
+                    System.out.print("Question 4 with correct format: ");
+                    stringToIntConverter("4");
+                    break;
+                case 5:
+                    System.out.println("Question 5: " + addPrefixAndSuffixToString("Wow"));
+                    break;
+                case 6:
+                    System.out.println("Question 6: " + daysInMonth(Month.MARCH));
+                    break;
+                case 7:
+                    System.out.println("Question 7: " + substringOfWord("abcde"));
+                    break;
+                case 8:
+                    System.out.print("Question 8 with wrong format: ");
+                    year("21-11-02");
+                    System.out.print("Question 8 with correct format: ");
+                    year("2021-11-02");
+                    break;
+                case 9:
+                    System.out.print("Question 9: ");
+                    daysBetween("2017-08-30", "2017-09-02");
+                    break;
+                case 10:
+                    System.out.println("Question 10: 259 fahrenheit = " + fahrenheitToCelsius(259) + " celsius");
+                    break;
+                case 11:
+                    System.out.println("Question 11a: " + sumOf100Numbers());
+                    System.out.println("Question 11b: " + sumOfNumbers(15));
+                    break;
+
+                case 12:
+                    System.out.println("Question 12: Piano backwards is = " + backwardsString("piano"));
+                    break;
+
+                case 13:
+                    System.out.println("Question 13: Is 37 a prime number? " + isPrimeNumber(37));
+                    System.out.println("Question 13: Is 50 a prime number? " + isPrimeNumber(50));
+                    break;
+
+                case 14:
+                    System.out.println("Question 14: " + average(3, 4));
+                    System.out.println("Question 14: " + average(2, 3, 4));
+                    System.out.println("Question 14: " + average(2, 3, 4, 5));
+                    System.out.println("Question 14: " + average(2, 3, 4, 5, 6));
+                    break;
+
+                case 15:
+                    System.out.println("Question 15: " + factorial(5));
+                    break;
+
+                case 16:
+                    System.out.println("Question 16: " + factorialRecursion(4));
+                    break;
+                case 17:
+                    System.out.print("Question 17: Fibonacci series = ");
+                    fibonacci(10);
+
+                    System.out.print("\nQuestion 17: Fibonacci with recursion = ");
+                    int number = 10;
+                    int index = 0;
+                    while (index != number) {
+                        System.out.print(fibonacciRecursion(index) + " ");
+                        index++;
+                    }
+                    break;
+
+                case 18:
+                    System.out.print("\nQuestion 18: ");
+                    reverseStringRecursion("piano");
+                    break;
+
+                case 19:
+                    System.out.print("\nQuestion 19: ");
+                    int[] numberArray = {1, 2, 3, 4, 5};
+                    int[] copyOfNumberArray = copyOfArray(numberArray);
+                    System.out.println(Arrays.toString(copyOfNumberArray));
+                    break;
+
+                case 20:
+                    System.out.println("Question 20: " + Arrays.toString(filterLessThan(new int[]{1, 5, 7, 9, 2, 4, 3}, 4)));
+                    break;
+
+                case 21:
+                    System.out.println("No such question");
+                    break;
+
+                case 22:
+                    int[] array = {7, 2, 9, 4, 5, 1, 10};
+                    System.out.print("Question 22: Sort array " + Arrays.toString(array) + " ");
+                    bubbleSort(array);
+                    break;
+
+                case 23:
+                    int[] firstArray = {4, 2, 7, 5};
+                    int[] secondArray = {1, 22, 13, 3};
+                    int[] merged = sortArraysForMergeSort(firstArray, secondArray);
+                    System.out.println("Question 23: " + Arrays.toString(merged));
+                    break;
+
+                case 24:
+                    int[] arrayForMergeSort = {4, 78, 23, 1, 9, 10, 5};
+                    mergeSort(arrayForMergeSort);
+                    System.out.println("Question 24: " + Arrays.toString(arrayForMergeSort));
+                    break;
+
+                case 25:
+                    System.out.print("Question 25: ");
+                    String inputVowel = "A";
+                    String consonant = "b";
+                    String inputNumber = "1";
+                    if (isVowel(inputVowel))
+                        System.out.println("Vowel input");
+                    if (!isVowel(consonant))
+                        System.out.println("Consonant input");
+                    //isVowel(inputNumber);
+                    break;
+
+                case 26:
+                    System.out.print("Question 26: ");
+                    System.out.println("2 is an even number: " + isEven(2));
+                    System.out.println("7 is an even number: " + isEven(7));
+                    break;
+
+                case 27:
+                    System.out.println("Question 27: " + isAuthorised("snuff", "bark", "piggy"));
+                    System.out.println("Question 27: " + isAuthorised("toy", "bark", "piggy"));
+                    break;
+            }
         }
-
-        System.out.print("\nQuestion 18: ");
-        reverseStringRecursion("piano");
-
-        System.out.print("\nQuestion 19: ");
-        int[] numberArray = {1, 2, 3, 4, 5};
-        int[] copyOfNumberArray = copyOfArray(numberArray);
-        System.out.println(Arrays.toString(copyOfNumberArray));
-
-        System.out.println("Question 20: " + Arrays.toString(filterLessThan(new int[]{1, 5, 7, 9, 2, 4, 3}, 4)));
-
-        int[] array = {7, 2, 9, 4, 5, 1, 10};
-        System.out.print("Question 22: Sort array " + Arrays.toString(array) + " ");
-        bubbleSort(array);
-
-        int[] firstArray = {4, 2, 7, 5};
-        int[] secondArray = {1, 22, 13, 3};
-        int[] merged = sortArraysForMergeSort(firstArray, secondArray);
-        System.out.println("Question 23: " + Arrays.toString(merged));
-
-        int[] arrayForMergeSort = {4, 78, 23, 1, 9, 10, 5};
-        mergeSort(arrayForMergeSort);
-        System.out.println("Question 24: " + Arrays.toString(arrayForMergeSort));
-
-        System.out.print("Question 25: ");
-        String inputVowel = "A";
-        String consonant = "b";
-        String inputNumber = "1";
-        if (isVowel(inputVowel))
-            System.out.println("Vowel input");
-        if (!isVowel(consonant))
-            System.out.println("Consonant input");
-        //isVowel(inputNumber);
-
-        System.out.print("Question 26: ");
-        System.out.println("2 is an even number: " + isEven(2));
-        System.out.println("7 is an even number: " + isEven(7));
-
-        System.out.println("Question 27: " + isAuthorised("snuff", "bark", "piggy"));
-        System.out.println("Question 27: " + isAuthorised("toy", "bark", "piggy"));
-
     }
 
     //Question 2a
@@ -444,4 +522,7 @@ public class Metoder {
             } else return false;
         } else return false;
     }
+
+    //Question TwentyEight
+    //public static void
 }
