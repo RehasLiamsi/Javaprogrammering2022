@@ -69,9 +69,19 @@ public class Metoder {
         int[] merged = sortArraysForMergeSort(firstArray, secondArray);
         System.out.println("Question 23: " + Arrays.toString(merged));
 
-        int[] arrayForMergeSort = {4,78,23,1,9,10,5};
+        int[] arrayForMergeSort = {4, 78, 23, 1, 9, 10, 5};
         mergeSort(arrayForMergeSort);
         System.out.println("Question 24: " + Arrays.toString(arrayForMergeSort));
+
+        System.out.print("Question 25: ");
+        String inputVowel = "A";
+        String consonant = "b";
+        String inputNumber = "1";
+        if (isVowel(inputVowel))
+            System.out.println("Vowel input");
+        if (!isVowel(consonant))
+            System.out.println("Consonant input");
+       isVowel(inputNumber);
     }
 
     //Question 2a
@@ -337,7 +347,7 @@ public class Metoder {
             }
         }
         int[] mergedArray = new int[firstArray.length + secondArray.length];
-        return merge(mergedArray,firstArray,secondArray);
+        return merge(mergedArray, firstArray, secondArray);
     }
 
     public static int[] merge(int[] mergedArray, int[] firstArray, int[] secondArray) {
@@ -346,24 +356,23 @@ public class Metoder {
 
         int i = 0, j = 0, k = 0;
 
-        while(i < firstArrayLength && j < secondArrayLength) {
+        while (i < firstArrayLength && j < secondArrayLength) {
             if (firstArray[i] <= secondArray[j]) {
                 mergedArray[k] = firstArray[i];
                 i++;
-            }
-            else {
+            } else {
                 mergedArray[k] = secondArray[j];
                 j++;
             }
             k++;
         }
 
-        while(i < firstArrayLength) {
+        while (i < firstArrayLength) {
             mergedArray[k] = firstArray[i];
             i++;
             k++;
         }
-        while(j < secondArrayLength) {
+        while (j < secondArrayLength) {
             mergedArray[k] = secondArray[j];
             j++;
             k++;
@@ -396,6 +405,21 @@ public class Metoder {
         mergeSort(secondHalfOfArray);
 
         merge(array, firstHalfOfArray, secondHalfOfArray);
+    }
 
+    //QuestionTwentyFive
+    public static boolean isVowel(String alphabet) {
+        alphabet = alphabet.toLowerCase();
+        char c = alphabet.charAt(0);
+
+        if (Character.isLetter(c)) {
+            if (alphabet.equals("a") || alphabet.equals("e") || alphabet.equals("i") || alphabet.equals("o") || alphabet.equals("u"))
+                return true;
+            else
+                return false;
+        }
+
+        else
+            throw new RuntimeException("Invalid input format!");
     }
 }
